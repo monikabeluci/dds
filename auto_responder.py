@@ -1,3 +1,4 @@
+# coding: utf-8
 import asyncio
 import os
 import json
@@ -24,7 +25,7 @@ class AutoResponder:
             'ignore_groups': True,
             'work_hours_start': 0,
             'work_hours_end': 24,
-            'message': 'Привет! Спасибо за сообщение. Отвечу в ближайшее врем��.',
+            'message': 'Привет! Спасибо за сообщение. Отвечу в ближайшее время.',
             'media_path': None,
             'keywords': [],
             'blacklist': [],
@@ -250,6 +251,7 @@ class AutoResponder:
         self.is_running = False
         self.settings['enabled'] = False
         self.save_settings()
+        self.handlers = {}  # Очистка handlers
         
         print("\n" + "=" * 60)
         print("   АВТООТВЕТЧИК ОСТАНОВЛЕН")
@@ -313,7 +315,7 @@ class AutoResponder:
    Черный список: {len(self.settings['blacklist'])} пользователей
    Белый список: {len(self.settings['whitelist'])} пользователей
    
-   Уже ответили: {len(self.responded_users)} п��льзователям
+   Уже ответили: {len(self.responded_users)} пользователям
 {'=' * 60}
         """)
     

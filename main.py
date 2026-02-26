@@ -7,7 +7,6 @@ import hashlib
 from telethon import TelegramClient
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from telethon.errors import FloodWaitError
 from config import API_ID, API_HASH, SESSIONS_FOLDER, ANTIBAN
 from database import AccountDatabase
 from account_checker import AccountChecker, AccountStatus, AccountCheckResult
