@@ -21,7 +21,7 @@ def get_client(account_name: str = None):
         session = account_name or 'default'
         return TelegramClient(session, api_id, api_hash)
     except ImportError:
-        print("Error: telethon not installed. Run: pip install telethon")
+        print("Error: dependencies not installed. Run: pip install -r requirements.txt")
         sys.exit(1)
 
 
