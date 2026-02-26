@@ -1,3 +1,4 @@
+# coding: utf-8
 import asyncio
 from enum import Enum
 from dataclasses import dataclass, field

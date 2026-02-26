@@ -1,3 +1,4 @@
+# coding: utf-8
 import asyncio
 import random
 from telethon.tl.functions.messages import GetHistoryRequest

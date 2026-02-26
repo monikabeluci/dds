@@ -1,3 +1,4 @@
+# coding: utf-8
 import asyncio
 import random
 import os
@@ -18,14 +19,14 @@ class DMSpammer:
     def load_sent(self):
         if os.path.exists(DM_STATS_FILE):
             try:
-                with open(DM_STATS_FILE, 'r') as f:
+                with open(DM_STATS_FILE, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     self.sent_to = data.get('sent_to', [])
             except:
                 pass
     
     def save_sent(self):
-        with open(DM_STATS_FILE, 'w') as f:
+        with open(DM_STATS_FILE, 'w', encoding='utf-8') as f:
             json.dump({'sent_to': self.sent_to}, f)
     
     def process_message(self, message):
@@ -76,7 +77,7 @@ class DMSpammer:
         print(f"Аккаунтов: {len(clients)}")
         print(f"Получателей: {len(users)}")
         print(f"Сообщений: {len(messages)}")
-        print(f"Задержка: {delay_min}-{delay_max} ��ек")
+        print(f"Задержка: {delay_min}-{delay_max} сек")
         print(f"Лимит в день: {daily_limit}")
         print(f"Спинтакс: Включён")
         print("=" * 60)
